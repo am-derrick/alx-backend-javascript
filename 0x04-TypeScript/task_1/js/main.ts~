@@ -1,0 +1,24 @@
+//teacher interface
+export interface Teacher {
+     firstName: string;
+     lastName: string;
+     fullTimeEmployee: boolean;
+     yearsOfExperience?: number;
+     location: string;
+     [propNme: string]: any;
+}
+
+//director interface that extends teacher
+export interface Directors extends Teacher {
+     numberOfReports: number;
+}
+
+//printTeacherFunction interface
+export interface printTeacherFunction {
+     (firstName: string, lastName: string): string;
+}
+
+//printing teacher
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+      return `${firstName[0]}. ${lastNmae}`;
+};
