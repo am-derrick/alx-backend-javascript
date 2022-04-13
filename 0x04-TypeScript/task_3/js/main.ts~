@@ -1,0 +1,4 @@
+/// <reference path="crud.d.ts" />
+
+import { RowID, RowElement } form './interface';
+import * as CRUD from './crud';
