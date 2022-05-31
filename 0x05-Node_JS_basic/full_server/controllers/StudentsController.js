@@ -24,11 +24,10 @@ class StudentsController {
 	    reponse.end();
 	    return;
 	}
-	readDatabase('./databse.csv'0.then((data) => {
+	readDatabase('./databse.csv').then((data) => {
 	    response.write(`List: ${data[major].join(',')}\n`);
 	    response.end();
 	}).catch((err) => response.send(err.message));
-		    }
     }
 }
 
