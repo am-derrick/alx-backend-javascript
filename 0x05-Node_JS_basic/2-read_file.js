@@ -5,10 +5,10 @@ function countStudents(path) {
 	throw Error('Cannot load the database');
     }
 
-    const data = fs.readFileSync(path, 'utf-8');
+    const data = fs.readFileSync(path, 'utf8');
     const students = data.split('\n')
 	  .map((student) => student.split(','))
-	  .filter((student) => student.lenght === 4 && student[0] !== 'firstname')
+	  .filter((student) => student.length === 4 && student[0] !== 'firstname')
 	  .map((student) => ({
 	      firstName: student[0],
 	      lastName: student[1],
@@ -23,7 +23,7 @@ function countStudents(path) {
 	  .map((student) => student.firstName);
     console.log(`Number of students: ${students.length}`);
     console.log(`Number of students in CS: ${csStudents.length}. List: ${csStudents.join(',')}`);
-    console.log(`Number of students in SWE: ${sweStudents.length}. List: $(sweStudents.join(',')}`);
+    console.log(`Number of students in SWE: ${sweStudents.length}. List: ${sweStudents.join(',')}`);
 }
 
-module.exports = constStudents;
+module.exports = countStudents;
